@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import pika
 
-connection = pika.BlockingConnection(pika.connection.URLParameters('amqp://default:password@localhost:5673/%2f/messages'))
+connection = pika.BlockingConnection(pika.connection.URLParameters('amqp://default:password@localhost:5673/%2F'))
 channel = connection.channel()
 channel.queue_declare(queue='messages_normal')
 channel.basic_publish(exchange='', routing_key='hello', body='Hello World!')
